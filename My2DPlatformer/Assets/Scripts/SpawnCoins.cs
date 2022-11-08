@@ -22,9 +22,4 @@ public class SpawnCoins : MonoBehaviour
             Instantiate(_goldCoin, _points[i].transform.position, Quaternion.identity);
         }
     }
-    
-    void Update()
-    {
-        
-    }
 }

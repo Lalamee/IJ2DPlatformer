@@ -15,6 +15,7 @@ public class PickCoints : MonoBehaviour
             Destroy(collision.gameObject);
             _countCoints++;
             Debug.Log(_countCoints + " монет у игрока");
+            
         }
     }
 }

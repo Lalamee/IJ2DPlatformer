@@ -10,7 +10,7 @@ public class KillPlayer : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             Destroy(collision.gameObject);
-            Debug.Log(collision.gameObject + " Умер");
+            Debug.Log( "Вы умерли. Игра окончена");
         }
     }
 }
