@@ -40,17 +40,13 @@ public class Player : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("Ground"))
-        {
             _isGround = true;
-        }
     }
     
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("Ground"))
-        {
             _isGround = false;
-        }
     }
 
     private void Move()
