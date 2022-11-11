@@ -6,12 +6,12 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private float _speedRun;
-    [SerializeField] private float _forceJump;
 
     private Rigidbody2D _rigidbody2D;
     private SpriteRenderer _renderer;
     private Animator _animator;
+    private float _speedRun = 5;
+    private float _forceJump = 390;
     private bool _isGround;
     private string _currentAnimation;
 
