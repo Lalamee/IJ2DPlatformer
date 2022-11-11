@@ -8,10 +8,15 @@ public class Patrol : MonoBehaviour
     [SerializeField] private float _speed;
 
     private Transform[] _points;
+    private SpriteRenderer _renderer;
+    private Vector2 _direction;
     private int _currentPoint;
+    private int _startPoint = 0;
+    private int _endPoint = 1;
     
-    void Start()
+    private void Start()
     {
+        _renderer = GetComponent<SpriteRenderer>();
         _points = new Transform[_path.childCount];
 
         for (int i = 0; i < _path.childCount; i++)
@@ -20,7 +25,7 @@ public class Patrol : MonoBehaviour
         }
     }
     
-    void Update()
+    private void Update()
     {
         Transform target = _points[_currentPoint];
 
@@ -30,10 +35,13 @@ public class Patrol : MonoBehaviour
         {
             _currentPoint++;
             
+            if(_currentPoint == _endPoint)
+                _renderer.flipX = true;
+            else
+                _renderer.flipX = false;
+
             if (_currentPoint >= _points.Length)
-            {
-                _currentPoint = 0;
-            }
+                _currentPoint = _startPoint;
         }
     }
 }

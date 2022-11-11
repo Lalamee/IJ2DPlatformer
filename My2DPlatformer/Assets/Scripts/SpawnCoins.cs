@@ -8,7 +8,7 @@ public class SpawnCoins : MonoBehaviour
     [SerializeField] private Transform _spawnPoints;
 
     private Transform[] _points;
-    void Start()
+    private void Start()
     {
         _points = new Transform[_spawnPoints.childCount];
 
