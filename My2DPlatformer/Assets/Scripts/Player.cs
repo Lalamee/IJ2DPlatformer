@@ -39,13 +39,13 @@ public class Player : MonoBehaviour
     
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Ground"))
+        if (collision.collider.TryGetComponent(out Ground ground))
             _isGround = true;
     }
     
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Ground"))
+        if (collision.collider.TryGetComponent(out Ground ground))
             _isGround = false;
     }
 
